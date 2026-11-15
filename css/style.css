@@ -1,15 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Atkinson%20Hyperlegible:300,300italic,400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Atkinson%20Hyperlegible);
+@import url("https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-/* font changed from 'Merriweather', Georgia, Times */
-body { padding-top: 20px; padding-bottom: 40px; font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; font-size: 16px; color: #454545; }
-/* font changed from 'Merriweather', Georgia, Times */
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; font-weight: 700; color: #454545; }
+/* font changed from 'Atkinson Hyperlegible', Helvetica, sans-serif (and before that 'Merriweather', Georgia, Times) */
+body { padding-top: 20px; padding-bottom: 40px; font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; font-size: 17px; color: #333; }
+/* font changed from 'Atkinson Hyperlegible', Helvetica, sans-serif (and before that 'Merriweather', Georgia, Times) */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; font-weight: 700; color: #333; }
 
 blockquote p { font-size: 16px; line-height: 1.6em; }
 
 /* Masthead */
-.header, .footer, .header h3 { font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal; }
+.header, .footer, .header h3 { font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; text-transform: uppercase; font-weight: normal; letter-spacing: 0.04em; }
  
 /* Navigation */
 h3.text-muted a {text-decoration: none; color: #999999; }
@@ -28,7 +27,7 @@ img.avatar { margin-bottom: 30px; }
 .jumbotron { margin: 80px 0; }
 .jumbotron h1 { font-size: 72px; line-height: 1; }
 .jumbotron .btn { font-size: 21px; padding: 14px 24px; }
-.marketing p { line-height: 25px; }
+.marketing p { line-height: 1.6; }
 .marketing p.lead { line-height: 30px; }
 
 /* Notes */
@@ -44,13 +43,13 @@ ul.listnotes li {line-height: 30px; }
 .swatch-log h2.date { margin-bottom: 30px; }
 .swatch-log { margin: 30px auto 70px; height: 140px; }
 ul.swatch { list-style: none; margin: 0 auto; padding: 0; height: 50px; }
-ul.swatch li { text-transform: uppercase; display: inline; float: left; height: 80px; width: 75px; text-indent: -9999px; font-size: 14px; text-align: center; font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; background-image: url(/img/glass.png); background-repeat: repeat-x; background-position: 0 50%;}
+ul.swatch li { text-transform: uppercase; display: inline; float: left; height: 80px; width: 75px; text-indent: -9999px; font-size: 14px; text-align: center; font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; background-image: url(/img/glass.png); background-repeat: repeat-x; background-position: 0 50%;}
 ul.swatch li:hover { height: 75px; width: 75px; vertical-align: middle; text-indent: 0; }
 /* 
 ul.swatch li:last-child { webkit-border-top-right-radius: 9px; -webkit-border-bottom-right-radius: 9px; -moz-border-radius-topright: 9px; -moz-border-radius-bottomright: 9px; border-top-right-radius: 9px; border-bottom-right-radius: 9px; }
 ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bottom-left-radius: 9px; -moz-border-radius-topleft: 9px; -moz-border-radius-bottomleft: 9px; border-top-left-radius: 9px; border-bottom-left-radius: 9px; }
 */
-.swatch-log p { font-size: 14px; clear: left; margin-top: 10px; font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; text-transform: uppercase; }
+.swatch-log p { font-size: 14px; clear: left; margin-top: 10px; font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; text-transform: uppercase; }
 .clear { clear: both; height: 20px; }
 
 /* CV */
@@ -91,7 +90,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 	font-size: 24px;
 	padding-top: 5.5px;
 	margin: 5px 15px 0px 0px;
-	font-family: 'Atkinson Hyperlegible', Helvetica, sans-serif; }
+	font-family: 'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif; }
 
 /* center nav just without stacking on small viewports */
 .nav-justified > li {
@@ -100,6 +99,16 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 .nav-justified > li > a {
   margin-bottom: 0;
+}
+
+/* phones: scale the nav labels and padding down so the four tabs fit on one line */
+@media (max-width: 480px) {
+  .nav-justified > li > a {
+    padding-left: 1.8vw;
+    padding-right: 1.8vw;
+    font-size: min(17px, 4vw);
+    letter-spacing: 0.04em;
+  }
 }
 
 /* Hanging Indent */
@@ -130,3 +139,7 @@ summary::marker {
   align-items: center;
 }
 
+/* Software page: package links match the body text (overrides their inline color:#454545) */
+.parent a[style*="#454545"] {
+  color: inherit !important;
+}
